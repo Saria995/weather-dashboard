@@ -21,11 +21,12 @@
 
       <div class="card">
         <h3 class="card-header text-uppercase">Search By City</h3>
-        <form id="user-form" class="card-body">
+        <form id="city-form" class="card-body">
           <label class="form-label" for="username"><strong>Find your City:</strong></label>
-          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button class="btn btn-primary">Search</button>
+          <input name="cityName" id="cityName" type="text" autofocus="true" class="form-input" />
+          <button class="btn btn-primary" id="searchBtn">Search</button>
         </form>
+
       </div>
 
       <div class="card">
@@ -35,17 +36,91 @@
       </div>
     </div>
 
-  <div class="col-12 col-sm-12 col-md-8 float-right">
-      <div>
-      <h2 class="subtitle text-uppercase" style="display:inline">Current Weather</h2>
-      <div class="city listgroup"></div>
-    </div>
+    <!--Container for weather colummn when city is displayed-->
+    <div class="col-12 col-sm-12 col-md-8 float-left">
+        <div>
+        <h2 class="subtitle text-uppercase" id="list-group" style="display:inline">Current Weather <span id="city-search"></span></h2>
+          <div class="card card-city" id="result-container">
+              <p class="current-date"></p>
+              <h3 class="city"></h3>
+              <p class="weather-icon"></p>
+              <p class="temperature"></p>
+              <p class="humidity"></p>
+              <p class="wind"></p>
+              <p class="uv"></p>
+            </div>
+          </div>
+        </div>
 
-    <div>
-      <h2 class="subtitle text-uppercase" style="display:inline">5 Day Forecast</h2>
-      <div class="fiveDay"></div>
+
+<!-- 5 Day forecast title-->
+
+<div class="forecast-title">
+  <h2 class="subtitle text-uppercase" id="forecast" style="display:inline">5 Day Forecast</h2>
+<!--5 Day forecast container-->
+    <div class="row gutters">
+<!--Day 1-->
+      <div class="col">
+        <div class="card forecast-day">
+          <div class="card-body bg-primary">
+            <p class="day-one-date"></p>
+            <p class="day-one-icon"></p>
+            <p class="day-one-temperature"></p>
+            <p class="day-one-humidity"></p>
+
+          </div>
+        </div>
+      </div>
+<!--Day 2-->
+      <div class="col">
+        <div class="card forecast-day">
+          <div class="card-body bg-primary">
+            <p class="day-two-date"></p>
+            <p class="day-two-icon"></p>
+            <p class="day-two-temperature"></p>
+            <p class="day-two-humidity"></p>
+
+          </div>
+        </div>
+      </div>
+
+<!--Day 3-->
+      <div class="col">
+        <div class="card forecast-day">
+          <div class="card-body bg-primary">
+            <p class="day-three-date"></p>
+            <p class="day-three-icon"></p>
+            <p class="day-three-temperature"></p>
+            <p class="day-three-humidity"></p>
+
+          </div>
+        </div>
+      </div>
+<!--Day 4-->
+      <div class="col">
+        <div class="card forecast-day">
+          <div class="card-body bg-primary">
+            <p class="day-four-date"></p>
+            <p class="day-four-icon"></p>
+            <p class="day-four-temperature"></p>
+            <p class="day-four-humidity"></p>
+
+          </div>
+        </div>
+      </div>
+<!--Day 5-->
+      <div class="col">
+        <div class="card forecast-day">
+          <div class="card-body bg-primary">
+            <p class="day-five-date"></p>
+            <p class="day-five-icon"></p>
+            <p class="day-five-temperature"></p>
+            <p class="day-five-humidity"></p>
+
+          </div>
+        </div>
+      </div>
     </div>
-   
   </div>
 </main>
 
