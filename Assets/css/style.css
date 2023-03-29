@@ -41,9 +41,9 @@ main {
 /*Search Card and Search History*/
 .card {
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 15px;
     text-align: center;
-    background-color: #f2f3f4;
+    background-color: #f2f3f4d5;
 }
 
 .card-header{
@@ -92,4 +92,38 @@ footer {
 }
 #footer {
     font-size: 20px;
+}
+
+.weatherImg {
+    width: 150px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: auto;
+}
+
+.city {
+    text-align: left;
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+#current-date {
+    text-align: left;
+    margin-left: 10px;
+    position: static;
+}
+
+
+p {
+position: relative;
+bottom: 40px;
+}
+
+h2 {
+    margin: auto;
+}
+
+.bg-primary {
+   background-color: #f2f3f4;
 }
