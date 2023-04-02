@@ -116,8 +116,10 @@ footer {
 
 
 p {
-position: relative;
-bottom: 40px;
+    bottom: 40px;
+    font-weight: bold;
+    font-size: 20px;
+
 }
 
 h2 {

@@ -64,25 +64,13 @@ async function fetchWeather (event) {
   event.preventDefault()
   var query = cityName.value
   console.log(query)
-  // searchArray.push(query)
-  // localStorage.setItem("ci", JSON.stringify(searchArray))
-  // var cityE1= localStorage.getItem("city")
-  // var cityE2= JSON.parse(cityE1)
-
   searchArray.push(query)
   localStorage.setItem('searchHistory', JSON.stringify(searchArray))
 
   displaySearchHistory()
-  // pastSearchEl.textContent = ""
-
-  // cityE2.forEach(city => pastSearchEl.innerHTML += 
-  //   `<div><button>${city}</button></div>`
-
-  //   );
 
 
   var forecastRes= await getFiveDayForecast(query)
-  //console.log(getFiveDayForecast(query))
   var apiURL= 'https://api.openweathermap.org/data/2.5/weather?q=' + 
   query + 
   '&units=metric&appid=67569cfb459f2b4e8c98d6bfb682cbff';
@@ -145,7 +133,7 @@ async function fetchWeather (event) {
     pastSearchEl.innerHTML = '';
 
     for (let index = 0; index < searchArray.length; index++) {
-      const searchItem = document.createElement('div')
+      const searchItem = document.createElement('p')
       searchItem.textContent = searchArray[index]
      pastSearchEl.appendChild(searchItem)
       
@@ -153,13 +141,6 @@ async function fetchWeather (event) {
   }
   searchBtn.addEventListener('click', fetchWeather);
 
-
-  pastSearchEl.onclick = function(e){
-    var city =e.target.innerText
-    console.log(city);
-    fetchWeather2(city)
-
-  }
 
   // function fetchWeather2(city) {
 
