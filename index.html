@@ -22,7 +22,7 @@
  <!--Search container-->
 
  <main class="flex-row justify-space-between">
-    <div class="col-12 col-sm-12 col-md-4 float-left">
+    <div class="col-sm-12 col-md-4 float-left">
 
       <div class="card">
         <h3 class="card-header text-uppercase">Search By City</h3>
@@ -32,16 +32,21 @@
           <button class="btn btn-primary" id="searchBtn">Search</button>
         </form>
       </div>
-
+<!--Search History Card Display-->
       <div class="card">
         <h3 class="card-header text-uppercase float-left">Search History</h3>
+        
         <div id="searchHistory" class="card-body">
-          <div class = "past-search border" id = "past-search-buttons"></div>
+        </div>
+        <div> 
+          <button type="button" class="btn btn-warning" id="clearBtn">Clear Search History</button>
         </div>
       </div>
     </div>
 
-    <!--Container for weather colummn when city is displayed-->
+
+
+    <!--Container for current weather colummn when city is displayed-->
     <div class="col-12 col-sm-12 col-md-8 float-left">
         <div>
         <h2 class="subtitle text-uppercase" id="list-group" style="display:inline">Current Weather <span id="city-search"></span></h2>
@@ -59,8 +64,8 @@
 <!-- 5 Day forecast title-->
 
 <div id = "five-day">
-  <h2 class= "col-12" id = "forecast"></h2>
-  <div class = "d-flex" id = "fiveday-container"></div>
+  <h2 id = "forecast"></h2>
+  <div class = "d-flex" id= "fiveday-container"></div>
 </div>  
 
           
@@ -68,7 +73,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./Assets/js/script.js"></script>
-
+<!--footer section-->
     <footer class="footer">
       <h2 id="footer">Made with ❤️️ by Saria Elchaar</h2>
       <p>
