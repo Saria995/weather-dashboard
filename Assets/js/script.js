@@ -83,38 +83,41 @@ async function fetchWeather (event) {
       query + 
       '&units=metric&appid=67569cfb459f2b4e8c98d6bfb682cbff';
 
-       console.log("inside fetch")
+      console.log("inside fetch")
+
       fetch(apiURL)
       .then((response) => response.json()) 
       .then((data) => {
       renderWeather(data)
+
       console.log(forecastRes);
 //5 day forecast title
 
       forecastContainerEl.textContent = ""
       forecastTitle.textContent = "5-Day Forecast";
 //Create loop to show 5 cards for forecasted weather
-    var fiveDay = document.querySelector("#five-day");
+      var fiveDay = document.querySelector("#five-day");
+
       for (var i=0; i < forecastRes.length; i++) {
         console.log(forecastRes[i]);
 
-      var dailyForecast = forecastRes[i];
+        var dailyForecast = forecastRes[i];
 
-      var forecastEl =document.createElement("div");
+        var forecastEl =document.createElement("div");
         forecastEl.classList = "card text-white bg-secondary mb-3 text-dark m-2";
 
 //Forecast Date display
         var forecastDate = document.createElement("h5")
-        forecastDate.textContent= dayjs.unix(dailyForecast.dt).format("MMM D, YYYY");
-        forecastDate.classList = "card-header text-center"
-        forecastEl.appendChild(forecastDate);
+          forecastDate.textContent= dayjs.unix(dailyForecast.dt).format("MMM D, YYYY");
+          forecastDate.classList = "card-header text-center"
+          forecastEl.appendChild(forecastDate);
 
 
 //forecast image
-      var weatherIcon = document.createElement("img")
-        weatherIcon.classList = "card-body text-center";
-        weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
-        forecastEl.appendChild(weatherIcon);
+        var weatherIcon = document.createElement("img")
+          weatherIcon.classList = "card-body text-center";
+          weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
+          forecastEl.appendChild(weatherIcon);
 
 //Forecast Temperature display
       var forecastTempEl=document.createElement("span");
@@ -124,15 +127,15 @@ async function fetchWeather (event) {
 
 //Forecast humidity display
        var forecastHumEl=document.createElement("span");
-       forecastHumEl.classList = "card-body text-center";
-       forecastHumEl.textContent = "Humidity: "+ dailyForecast.main.humidity + "  %";
-       forecastEl.appendChild(forecastHumEl);
+        forecastHumEl.classList = "card-body text-center";
+        forecastHumEl.textContent = "Humidity: "+ dailyForecast.main.humidity + "  %";
+        forecastEl.appendChild(forecastHumEl);
 
 //Forecast wind speed display
        var forecastwindSpeed= document.createElement("span");
-       forecastwindSpeed.classList = "card-body text-center";
-       forecastwindSpeed.textContent = "Wind Speed: " +  dailyForecast.wind.speed + "mph";
-       forecastEl.appendChild(forecastwindSpeed);
+        forecastwindSpeed.classList = "card-body text-center";
+        forecastwindSpeed.textContent = "Wind Speed: " +  dailyForecast.wind.speed + "mph";
+        forecastEl.appendChild(forecastwindSpeed);
 
        forecastContainerEl.appendChild(forecastEl);
 
